@@ -9,3 +9,5 @@ Como operar o programa de organização de arquivos:
 8. Aperte o botão "Run";
 9. Caso deseje mudar a configuração escolhida será necessário que reabra a aplicação;
 10. Após fechar o executável a configuração utilizada e o log da aplicação será guadado na pasta target;
+
+PS. Todo o código utilizado para a implementação se encontra na pasta src

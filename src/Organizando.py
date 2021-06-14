@@ -4,7 +4,8 @@ from datetime import datetime
 
 def write_config(diretorioA, diretorioB, regx):
     with open('config.txt', 'a') as arquivo:
-        arquivo.write("Origin Folder: {}\nDestination Folder: {}\nRegx: {}".format(diretorioA, diretorioB, regx))
+        arquivo.write("Origin Folder: {}\nDestination Folder: {}\nRegx: {}\n".format(diretorioA, diretorioB, regx))
+
 
 def write_log(arquivo, diretorioA, diretorioB):
     with open('log.txt', 'a') as log_file:
@@ -17,8 +18,24 @@ def write_log(arquivo, diretorioA, diretorioB):
         log_file.write(conteudo_log)
 
 
+def vizualizar_dados():
+    retorno = '-----------------------------------CONFIG----------------------------------\n'
+    with open('config.txt', 'r') as config:
+        config_r = config.readlines()
+    with open('log.txt', 'r') as log:
+        log_r = log.readlines()
+
+    for linhaC in config_r:
+        retorno += linhaC + '\n'
+    retorno += '----------------------------------LOG----------------------------------\n'
+
+    for linhaL in log_r:
+        retorno += linhaL + '\n'
+
+    return retorno
+
+
 def organizar(diretorioA, diretorioB, regx):
-    write_config(diretorioA, diretorioB, regx)
     arquivos = os.listdir(diretorioA)
 
     for arquivo in arquivos:
